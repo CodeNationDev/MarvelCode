@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
-//
-//  Created by david.martin.saiz on 04/07/2021.
-//
-
 import Foundation
+import Network
+
+public class ConnectionManager {
+    public class func retrieveListOfCharacters(completion: (Void)) {
+        
+    }
+}

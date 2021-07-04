@@ -1,8 +1,12 @@
-//
-//  File.swift
-//  
-//
-//  Created by david.martin.saiz on 04/07/2021.
-//
+import XCTest
+@testable import ConnectionManager
 
-import Foundation
+final class ConnectionManager: XCTestCase {
+    func connectionTestExample() {
+//        XCTAssertEqual(ConnectionManager().text, "Hello, World!")
+    }
+
+    static var allTests = [
+        ("testExample", testExample),
+    ]
+}

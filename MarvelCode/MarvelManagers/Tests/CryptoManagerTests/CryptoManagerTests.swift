@@ -1,8 +1,12 @@
-//
-//  File.swift
-//  
-//
-//  Created by david.martin.saiz on 04/07/2021.
-//
+import XCTest
+@testable import CryptoManager
 
-import Foundation
+final class CryptoManager: XCTestCase {
+    func cryptoTestExample() {
+//        XCTAssertEqual(CryptoManager().text, "Hello, World!")
+    }
+
+    static var allTests = [
+        ("testExample", testExample),
+    ]
+}

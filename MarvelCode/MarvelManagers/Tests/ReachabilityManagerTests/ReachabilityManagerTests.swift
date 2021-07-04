@@ -2,8 +2,8 @@ import XCTest
 @testable import ReachabilityManager
 
 final class ReachabilityManager: XCTestCase {
-    func testExample() {
-//        XCTAssertEqual(ConnectionManager().text, "Hello, World!")
+    func reachabilityTestExample() {
+//        XCTAssertEqual(ReachabilityManager().text, "Hello, World!")
     }
 
     static var allTests = [

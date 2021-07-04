@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-class SplashScreen: UIViewController, SplashScreen {
+class SplashScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072FB399269197E800886508 /* ReachabilityManager in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 07B36885268F698F004F9896 /* ReachabilityManager */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		072FB3AA2691F94B00886508 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072FB3A92691F94B00886508 /* SplashScreen.storyboard */; };
+		072FB3AE2691F98D00886508 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB3AD2691F98D00886508 /* SplashScreen.swift */; };
+		076F8DA1269196A200F5E43F /* ConnectionManager in Frameworks */ = {isa = PBXBuildFile; productRef = 076F8DA0269196A200F5E43F /* ConnectionManager */; };
+		076F8DA2269196A200F5E43F /* ConnectionManager in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 076F8DA0269196A200F5E43F /* ConnectionManager */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		076F8DA4269196A600F5E43F /* CryptoManager in Frameworks */ = {isa = PBXBuildFile; productRef = 076F8DA3269196A600F5E43F /* CryptoManager */; };
+		076F8DA5269196A600F5E43F /* CryptoManager in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 076F8DA3269196A600F5E43F /* CryptoManager */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		079BE9F0268F5D4100A8FD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BE9EF268F5D4100A8FD4D /* AppDelegate.swift */; };
 		079BE9F4268F5D4100A8FD4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BE9F3268F5D4100A8FD4D /* ViewController.swift */; };
 		079BE9F7268F5D4100A8FD4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079BE9F5268F5D4100A8FD4D /* Main.storyboard */; };
@@ -34,7 +41,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07B3689B26918AA9004F9896 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				072FB399269197E800886508 /* ReachabilityManager in Embed Frameworks */,
+				076F8DA2269196A200F5E43F /* ConnectionManager in Embed Frameworks */,
+				076F8DA5269196A600F5E43F /* CryptoManager in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		072FB3A92691F94B00886508 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		072FB3AD2691F98D00886508 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		079BE9EC268F5D4100A8FD4D /* MarvelCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079BE9EF268F5D4100A8FD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079BE9F3268F5D4100A8FD4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076F8DA1269196A200F5E43F /* ConnectionManager in Frameworks */,
 				07B36886268F698F004F9896 /* ReachabilityManager in Frameworks */,
+				076F8DA4269196A600F5E43F /* CryptoManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +160,7 @@
 			children = (
 				079BE9F3268F5D4100A8FD4D /* ViewController.swift */,
 				07B3688E268F6AF4004F9896 /* Delegates */,
+				072FB3AD2691F98D00886508 /* SplashScreen.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -149,6 +177,7 @@
 			children = (
 				079BE9F5268F5D4100A8FD4D /* Main.storyboard */,
 				079BE9FA268F5D4200A8FD4D /* LaunchScreen.storyboard */,
+				072FB3A92691F94B00886508 /* SplashScreen.storyboard */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -171,6 +200,7 @@
 				079BE9E8268F5D4100A8FD4D /* Sources */,
 				079BE9E9268F5D4100A8FD4D /* Frameworks */,
 				079BE9EA268F5D4100A8FD4D /* Resources */,
+				07B3689B26918AA9004F9896 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +209,8 @@
 			name = MarvelCode;
 			packageProductDependencies = (
 				07B36885268F698F004F9896 /* ReachabilityManager */,
+				076F8DA0269196A200F5E43F /* ConnectionManager */,
+				076F8DA3269196A600F5E43F /* CryptoManager */,
 			);
 			productName = MarvelCode;
 			productReference = 079BE9EC268F5D4100A8FD4D /* MarvelCode.app */;
@@ -268,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				079BE9FC268F5D4200A8FD4D /* LaunchScreen.storyboard in Resources */,
+				072FB3AA2691F94B00886508 /* SplashScreen.storyboard in Resources */,
 				079BE9F9268F5D4200A8FD4D /* Assets.xcassets in Resources */,
 				079BE9F7268F5D4100A8FD4D /* Main.storyboard in Resources */,
 			);
@@ -294,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072FB3AE2691F98D00886508 /* SplashScreen.swift in Sources */,
 				079BE9F4268F5D4100A8FD4D /* ViewController.swift in Sources */,
 				079BE9F0268F5D4100A8FD4D /* AppDelegate.swift in Sources */,
 			);
@@ -481,7 +515,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codenationdev.MarvelCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,7 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.codenationdev.MarvelCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -630,6 +664,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		076F8DA0269196A200F5E43F /* ConnectionManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ConnectionManager;
+		};
+		076F8DA3269196A600F5E43F /* CryptoManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CryptoManager;
+		};
 		07B36885268F698F004F9896 /* ReachabilityManager */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ReachabilityManager;
