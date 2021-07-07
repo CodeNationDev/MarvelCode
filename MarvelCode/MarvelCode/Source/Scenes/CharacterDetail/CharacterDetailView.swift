@@ -2,10 +2,9 @@
 import Foundation
 import UIKit
 
-class SplashScreen: UIViewController {
-    
+class CharacterDetailView: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }

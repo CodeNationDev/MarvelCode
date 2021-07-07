@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "MarvelManagers",
+    name: "MarvelPackage",
     platforms: [
         .iOS(.v12),
         .watchOS(.v6),
@@ -22,7 +22,15 @@ let package = Package(
         .library(
             name: "CryptoManager",
             type: .dynamic,
-            targets: ["CryptoManager"])
+            targets: ["CryptoManager"]),
+        .library(
+            name: "Helpers",
+            type: .dynamic,
+            targets: ["Helpers"]),
+        .library(
+            name: "MarvelAPIManager",
+            type: .dynamic,
+            targets: ["MarvelAPIManager"])
     ],
     dependencies: [],
     targets: [
@@ -33,6 +41,10 @@ let package = Package(
             name: "ConnectionManager"),
         .target(
             name: "CryptoManager"),
+        .target(
+            name: "Helpers"),
+        .target(
+            name: "MarvelAPIManager"),
         
         .testTarget(
             name: "ReachabilityManagerTests",
