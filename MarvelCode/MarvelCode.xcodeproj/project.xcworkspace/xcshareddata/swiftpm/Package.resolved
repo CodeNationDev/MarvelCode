@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SimplyLogger",
+        "repositoryURL": "https://github.com/CodeNationDev/SimplyLogger.git",
+        "state": {
+          "branch": null,
+          "revision": "3f074702ef64a96be53c22d2caa1c2afa7d85b36",
+          "version": "0.0.7"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

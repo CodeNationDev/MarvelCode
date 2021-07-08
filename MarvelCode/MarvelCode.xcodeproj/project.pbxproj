@@ -34,6 +34,7 @@
 		079BE9FC268F5D4200A8FD4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079BE9FA268F5D4200A8FD4D /* LaunchScreen.storyboard */; };
 		079BEA07268F5D4200A8FD4D /* MarvelCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BEA06268F5D4200A8FD4D /* MarvelCodeTests.swift */; };
 		079BEA12268F5D4200A8FD4D /* MarvelCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BEA11268F5D4200A8FD4D /* MarvelCodeUITests.swift */; };
+		07B0C8452697A7D800A049A4 /* SimplyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 07B0C8442697A7D800A049A4 /* SimplyLogger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072FB3E32693B4DB00886508 /* ConnectionManager in Frameworks */,
+				07B0C8452697A7D800A049A4 /* SimplyLogger in Frameworks */,
 				072FB3E62693B4DB00886508 /* CryptoManager in Frameworks */,
 				072FB412269514C800886508 /* Helpers in Frameworks */,
 				072FB3EC2693B4DB00886508 /* ReachabilityManager in Frameworks */,
@@ -288,6 +290,7 @@
 				072FB3E52693B4DB00886508 /* CryptoManager */,
 				072FB3EB2693B4DB00886508 /* ReachabilityManager */,
 				072FB411269514C800886508 /* Helpers */,
+				07B0C8442697A7D800A049A4 /* SimplyLogger */,
 			);
 			productName = MarvelCode;
 			productReference = 079BE9EC268F5D4100A8FD4D /* MarvelCode.app */;
@@ -360,6 +363,9 @@
 				Base,
 			);
 			mainGroup = 079BE9E3268F5D4100A8FD4D;
+			packageReferences = (
+				07B0C8432697A7D800A049A4 /* XCRemoteSwiftPackageReference "SimplyLogger" */,
+			);
 			productRefGroup = 079BE9ED268F5D4100A8FD4D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -752,6 +758,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		07B0C8432697A7D800A049A4 /* XCRemoteSwiftPackageReference "SimplyLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeNationDev/SimplyLogger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		072FB3E22693B4DB00886508 /* ConnectionManager */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -768,6 +785,11 @@
 		072FB411269514C800886508 /* Helpers */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Helpers;
+		};
+		07B0C8442697A7D800A049A4 /* SimplyLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07B0C8432697A7D800A049A4 /* XCRemoteSwiftPackageReference "SimplyLogger" */;
+			productName = SimplyLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
