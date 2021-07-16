@@ -9,6 +9,7 @@ class MarvelAPIManager {
     public static let shared = MarvelAPIManager()
 
     public func retrieveList(limit: Int? = nil, offset: Int? = nil, completion: @escaping ([Result]) -> Void ) {
+        DispatchQueue.main.async {
         let ts = UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased()
         let params:[String:AnyHashable] = {
             guard let publicKey = Bundle.main.infoDictionary?["PUBLIC_API_KEY"] as? String else { return [:] }
@@ -42,5 +43,6 @@ class MarvelAPIManager {
                     print("Request Error: \(error.localizedDescription)")
                 }
             }
+        }
     }
 }
