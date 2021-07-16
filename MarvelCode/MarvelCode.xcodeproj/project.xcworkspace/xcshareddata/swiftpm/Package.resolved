@@ -2,12 +2,48 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "f96b619bcb2383b43d898402283924b80e2c4bae",
+          "version": "5.4.3"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "8d4f6384e0a8cc41f2005247241dd553963a492a",
+          "version": "1.4.1"
+        }
+      },
+      {
+        "package": "IntegirtySwift",
+        "repositoryURL": "https://github.com/CodeNationDev/IntegritySwift.git",
+        "state": {
+          "branch": null,
+          "revision": "0bc3d2dd0c9afcdff42df70df5cea3da485ecbf1",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "SimplyLogger",
         "repositoryURL": "https://github.com/CodeNationDev/SimplyLogger.git",
         "state": {
           "branch": null,
           "revision": "3f074702ef64a96be53c22d2caa1c2afa7d85b36",
           "version": "0.0.7"
+        }
+      },
+      {
+        "package": "SwiftMagicHelpers",
+        "repositoryURL": "https://github.com/CodeNationDev/SwiftMagicHelpers.git",
+        "state": {
+          "branch": "develop",
+          "revision": "b6a2f8d4a39239bbcfb2708688a6af06d56ff416",
+          "version": null
         }
       }
     ]

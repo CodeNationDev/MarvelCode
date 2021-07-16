@@ -15,8 +15,6 @@
 		072FB3DF2693AC5A00886508 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB3DE2693AC5A00886508 /* MainModel.swift */; };
 		072FB3E32693B4DB00886508 /* ConnectionManager in Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3E22693B4DB00886508 /* ConnectionManager */; };
 		072FB3E42693B4DB00886508 /* ConnectionManager in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3E22693B4DB00886508 /* ConnectionManager */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		072FB3E62693B4DB00886508 /* CryptoManager in Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3E52693B4DB00886508 /* CryptoManager */; };
-		072FB3E72693B4DB00886508 /* CryptoManager in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3E52693B4DB00886508 /* CryptoManager */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		072FB3EC2693B4DB00886508 /* ReachabilityManager in Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3EB2693B4DB00886508 /* ReachabilityManager */; };
 		072FB3ED2693B4DB00886508 /* ReachabilityManager in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3EB2693B4DB00886508 /* ReachabilityManager */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		072FB3F12694F7BE00886508 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB3F02694F7BE00886508 /* Router.swift */; };
@@ -27,6 +25,15 @@
 		072FB40C269510B900886508 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB40B269510B900886508 /* Constants.swift */; };
 		072FB412269514C800886508 /* Helpers in Frameworks */ = {isa = PBXBuildFile; productRef = 072FB411269514C800886508 /* Helpers */; };
 		072FB413269514C800886508 /* Helpers in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 072FB411269514C800886508 /* Helpers */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0770523726A0F9A300782A49 /* SimplyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 0770523626A0F9A300782A49 /* SimplyLogger */; };
+		0770523C26A0F9D200782A49 /* SwiftMagicHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 0770523B26A0F9D200782A49 /* SwiftMagicHelpers */; };
+		0770524426A0FC3300782A49 /* MarvelUIKitManager in Frameworks */ = {isa = PBXBuildFile; productRef = 0770524326A0FC3300782A49 /* MarvelUIKitManager */; };
+		0770524A26A1001900782A49 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0770524926A1001900782A49 /* CharacterCell.xib */; };
+		0770527D26A1083000782A49 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770527C26A1083000782A49 /* CharacterCell.swift */; };
+		077782AA269C8B1A0065248D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 077782A9269C8B1A0065248D /* Alamofire */; };
+		077782AF269C8FA20065248D /* IntegirtySwift in Frameworks */ = {isa = PBXBuildFile; productRef = 077782AE269C8FA20065248D /* IntegirtySwift */; };
+		077782B4269D0FD40065248D /* MarvelAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077782B3269D0FD40065248D /* MarvelAPIManager.swift */; };
+		077782B9269DE6B10065248D /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 077782B8269DE6B10065248D /* CryptoSwift */; };
 		079BE9F0268F5D4100A8FD4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BE9EF268F5D4100A8FD4D /* AppDelegate.swift */; };
 		079BE9F4268F5D4100A8FD4D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BE9F3268F5D4100A8FD4D /* SplashScreenView.swift */; };
 		079BE9F7268F5D4100A8FD4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079BE9F5268F5D4100A8FD4D /* Main.storyboard */; };
@@ -34,7 +41,6 @@
 		079BE9FC268F5D4200A8FD4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079BE9FA268F5D4200A8FD4D /* LaunchScreen.storyboard */; };
 		079BEA07268F5D4200A8FD4D /* MarvelCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BEA06268F5D4200A8FD4D /* MarvelCodeTests.swift */; };
 		079BEA12268F5D4200A8FD4D /* MarvelCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079BEA11268F5D4200A8FD4D /* MarvelCodeUITests.swift */; };
-		07B0C8452697A7D800A049A4 /* SimplyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 07B0C8442697A7D800A049A4 /* SimplyLogger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +68,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				072FB3E42693B4DB00886508 /* ConnectionManager in Embed Frameworks */,
-				072FB3E72693B4DB00886508 /* CryptoManager in Embed Frameworks */,
 				072FB413269514C800886508 /* Helpers in Embed Frameworks */,
 				072FB3ED2693B4DB00886508 /* ReachabilityManager in Embed Frameworks */,
 			);
@@ -84,6 +89,9 @@
 		072FB3F72694FFDD00886508 /* CharacterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		072FB3FE2695074D00886508 /* ReplaceSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
 		072FB40B269510B900886508 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0770524926A1001900782A49 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		0770527C26A1083000782A49 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		077782B3269D0FD40065248D /* MarvelAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarvelAPIManager.swift; sourceTree = "<group>"; };
 		079BE9EC268F5D4100A8FD4D /* MarvelCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079BE9EF268F5D4100A8FD4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079BE9F3268F5D4100A8FD4D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -107,10 +115,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				072FB3E32693B4DB00886508 /* ConnectionManager in Frameworks */,
-				07B0C8452697A7D800A049A4 /* SimplyLogger in Frameworks */,
-				072FB3E62693B4DB00886508 /* CryptoManager in Frameworks */,
+				077782B9269DE6B10065248D /* CryptoSwift in Frameworks */,
+				0770523726A0F9A300782A49 /* SimplyLogger in Frameworks */,
+				077782AA269C8B1A0065248D /* Alamofire in Frameworks */,
+				077782AF269C8FA20065248D /* IntegirtySwift in Frameworks */,
 				072FB412269514C800886508 /* Helpers in Frameworks */,
 				072FB3EC2693B4DB00886508 /* ReachabilityManager in Frameworks */,
+				0770523C26A0F9D200782A49 /* SwiftMagicHelpers in Frameworks */,
+				0770524426A0FC3300782A49 /* MarvelUIKitManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +191,33 @@
 			path = CustomClasses;
 			sourceTree = "<group>";
 		};
+		0770524726A0FFD500782A49 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				079BE9F5268F5D4100A8FD4D /* Main.storyboard */,
+				079BE9FA268F5D4200A8FD4D /* LaunchScreen.storyboard */,
+				072FB3A92691F94B00886508 /* SplashScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		0770524826A0FFE200782A49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0770524926A1001900782A49 /* CharacterCell.xib */,
+				0770527C26A1083000782A49 /* CharacterCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		077782B2269D0FB70065248D /* LocalManagers */ = {
+			isa = PBXGroup;
+			children = (
+				077782B3269D0FD40065248D /* MarvelAPIManager.swift */,
+			);
+			path = LocalManagers;
+			sourceTree = "<group>";
+		};
 		079BE9E3268F5D4100A8FD4D = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +273,7 @@
 		079BEA54268F5ED600A8FD4D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				077782B2269D0FB70065248D /* LocalManagers */,
 				072FB3FD2695073800886508 /* CustomClasses */,
 				072FB3C52693A70F00886508 /* Scenes */,
 				07B3688E268F6AF4004F9896 /* Delegates */,
@@ -253,9 +293,8 @@
 		07B3688D268F6AAC004F9896 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				079BE9F5268F5D4100A8FD4D /* Main.storyboard */,
-				079BE9FA268F5D4200A8FD4D /* LaunchScreen.storyboard */,
-				072FB3A92691F94B00886508 /* SplashScreen.storyboard */,
+				0770524826A0FFE200782A49 /* Views */,
+				0770524726A0FFD500782A49 /* Storyboards */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -287,10 +326,14 @@
 			name = MarvelCode;
 			packageProductDependencies = (
 				072FB3E22693B4DB00886508 /* ConnectionManager */,
-				072FB3E52693B4DB00886508 /* CryptoManager */,
 				072FB3EB2693B4DB00886508 /* ReachabilityManager */,
 				072FB411269514C800886508 /* Helpers */,
-				07B0C8442697A7D800A049A4 /* SimplyLogger */,
+				077782A9269C8B1A0065248D /* Alamofire */,
+				077782AE269C8FA20065248D /* IntegirtySwift */,
+				077782B8269DE6B10065248D /* CryptoSwift */,
+				0770523626A0F9A300782A49 /* SimplyLogger */,
+				0770523B26A0F9D200782A49 /* SwiftMagicHelpers */,
+				0770524326A0FC3300782A49 /* MarvelUIKitManager */,
 			);
 			productName = MarvelCode;
 			productReference = 079BE9EC268F5D4100A8FD4D /* MarvelCode.app */;
@@ -364,7 +407,11 @@
 			);
 			mainGroup = 079BE9E3268F5D4100A8FD4D;
 			packageReferences = (
-				07B0C8432697A7D800A049A4 /* XCRemoteSwiftPackageReference "SimplyLogger" */,
+				077782A8269C8B1A0065248D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				077782AD269C8FA20065248D /* XCRemoteSwiftPackageReference "IntegritySwift" */,
+				077782B7269DE6B10065248D /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				0770523526A0F9A300782A49 /* XCRemoteSwiftPackageReference "SimplyLogger" */,
+				0770523A26A0F9D200782A49 /* XCRemoteSwiftPackageReference "SwiftMagicHelpers" */,
 			);
 			productRefGroup = 079BE9ED268F5D4100A8FD4D /* Products */;
 			projectDirPath = "";
@@ -384,6 +431,7 @@
 			files = (
 				079BE9FC268F5D4200A8FD4D /* LaunchScreen.storyboard in Resources */,
 				072FB3AA2691F94B00886508 /* SplashScreen.storyboard in Resources */,
+				0770524A26A1001900782A49 /* CharacterCell.xib in Resources */,
 				079BE9F9268F5D4200A8FD4D /* Assets.xcassets in Resources */,
 				079BE9F7268F5D4100A8FD4D /* Main.storyboard in Resources */,
 			);
@@ -410,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0770527D26A1083000782A49 /* CharacterCell.swift in Sources */,
 				072FB3F12694F7BE00886508 /* Router.swift in Sources */,
 				072FB3FA2694FFDD00886508 /* CharacterDetailView.swift in Sources */,
 				072FB3FF2695074D00886508 /* ReplaceSegue.swift in Sources */,
@@ -421,6 +470,7 @@
 				072FB3DF2693AC5A00886508 /* MainModel.swift in Sources */,
 				072FB3D52693AC3E00886508 /* MainView.swift in Sources */,
 				072FB3F92694FFDD00886508 /* CharacterDetailViewModel.swift in Sources */,
+				077782B4269D0FD40065248D /* MarvelAPIManager.swift in Sources */,
 				079BE9F0268F5D4100A8FD4D /* AppDelegate.swift in Sources */,
 				072FB3DB2693AC4B00886508 /* MainViewModel.swift in Sources */,
 			);
@@ -759,12 +809,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		07B0C8432697A7D800A049A4 /* XCRemoteSwiftPackageReference "SimplyLogger" */ = {
+		0770523526A0F9A300782A49 /* XCRemoteSwiftPackageReference "SimplyLogger" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CodeNationDev/SimplyLogger.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.7;
+				kind = exactVersion;
+				version = 0.0.7;
+			};
+		};
+		0770523A26A0F9D200782A49 /* XCRemoteSwiftPackageReference "SwiftMagicHelpers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeNationDev/SwiftMagicHelpers.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		077782A8269C8B1A0065248D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.3;
+			};
+		};
+		077782AD269C8FA20065248D /* XCRemoteSwiftPackageReference "IntegritySwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CodeNationDev/IntegritySwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+		077782B7269DE6B10065248D /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.4.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -774,10 +856,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ConnectionManager;
 		};
-		072FB3E52693B4DB00886508 /* CryptoManager */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CryptoManager;
-		};
 		072FB3EB2693B4DB00886508 /* ReachabilityManager */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ReachabilityManager;
@@ -786,10 +864,34 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Helpers;
 		};
-		07B0C8442697A7D800A049A4 /* SimplyLogger */ = {
+		0770523626A0F9A300782A49 /* SimplyLogger */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 07B0C8432697A7D800A049A4 /* XCRemoteSwiftPackageReference "SimplyLogger" */;
+			package = 0770523526A0F9A300782A49 /* XCRemoteSwiftPackageReference "SimplyLogger" */;
 			productName = SimplyLogger;
+		};
+		0770523B26A0F9D200782A49 /* SwiftMagicHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0770523A26A0F9D200782A49 /* XCRemoteSwiftPackageReference "SwiftMagicHelpers" */;
+			productName = SwiftMagicHelpers;
+		};
+		0770524326A0FC3300782A49 /* MarvelUIKitManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MarvelUIKitManager;
+		};
+		077782A9269C8B1A0065248D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 077782A8269C8B1A0065248D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		077782AE269C8FA20065248D /* IntegirtySwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 077782AD269C8FA20065248D /* XCRemoteSwiftPackageReference "IntegritySwift" */;
+			productName = IntegirtySwift;
+		};
+		077782B8269DE6B10065248D /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 077782B7269DE6B10065248D /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

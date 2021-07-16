@@ -20,40 +20,38 @@ let package = Package(
             type: .dynamic,
             targets: ["ConnectionManager"]),
         .library(
-            name: "CryptoManager",
-            type: .dynamic,
-            targets: ["CryptoManager"]),
-        .library(
             name: "Helpers",
             type: .dynamic,
             targets: ["Helpers"]),
         .library(
-            name: "MarvelAPIManager",
-            type: .dynamic,
-            targets: ["MarvelAPIManager"])
+            name: "MarvelUIKitManager",
+            targets: ["MarvelUIKitManager"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/CodeNationDev/SimplyLogger.git", .exact("0.0.7")),
+        .package(name: "SwiftMagicHelpers", url: "https://github.com/CodeNationDev/SwiftMagicHelpers.git", .branch("develop"))
+    ],
     targets: [
         .target(
-            name: "ReachabilityManager",
-            dependencies: []),
+            name: "ReachabilityManager"),
         .target(
             name: "ConnectionManager"),
         .target(
-            name: "CryptoManager"),
-        .target(
             name: "Helpers"),
         .target(
-            name: "MarvelAPIManager"),
+            name: "MarvelUIKitManager",
+            dependencies: [.byName(name: "SimplyLogger"),
+                           .byName(name: "SwiftMagicHelpers")
+            ],
+            resources: [
+                .process("Resources/Fonts/Marvel-Regular.ttf"),
+            ]),
         
         .testTarget(
             name: "ReachabilityManagerTests",
             dependencies: ["ReachabilityManager"]),
         .testTarget(
             name: "ConnectionManagerTests",
-            dependencies: ["ConnectionManager"]),
-        .testTarget(
-            name: "CryptoManagerTests",
-            dependencies: ["CryptoManager"])
+            dependencies: ["ConnectionManager"])
     ]
 )

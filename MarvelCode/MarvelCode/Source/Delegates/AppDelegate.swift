@@ -1,7 +1,8 @@
 //
 import UIKit
 import ReachabilityManager
-import CryptoManager
+import IntegirtySwift
+import SimplyLogger
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,7 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         ReachabilityManagerImp.sharedInstance.start()
-        print(CryptoManager.md5Hex(string: "Hola"))
+        if !IntegrityManager.isSecure {
+            SimplyLogger.log(str: "Your device is not secure!!", appName: "MarvelPackage", identity: "TESTING", category: .error, type: .debug, log: .default)
+        }
         return true
     }
 }
