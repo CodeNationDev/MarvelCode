@@ -1,12 +1,13 @@
 //
 import Foundation
 import UIKit
+import MarvelUIKitManager
 
 protocol MainViewProtocol: class {
     func updateCharactersData(results: [Result])
 }
 
-class MainView: UIViewController  {
+class MainView: BaseViewController  {
     @IBOutlet weak var tableView: UITableView!
     var limit: Int = 100
     var offset: Int = 0
@@ -15,6 +16,9 @@ class MainView: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationColor = .spidermanBlue
+        navigationTitleColor = .spidermanRed
+        title = Constants.Views.ViewControllers.main.uppercased()
         mainVM = MainViewModel()
         setupTable()
         guard let viewmodel = mainVM else { return }
@@ -49,9 +53,8 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CharacterCell {
-            cell.viewColor = .spidermanRed
-        }
+        let characterSelected = characters[indexPath.row]
+        Router.routeToCharacterDetail(characterData: characterSelected)
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -61,7 +64,7 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == characters.count - 5 {
+        if indexPath.row == characters.count - 20 {
             offset += 100
             DispatchQueue.main.async { [self] in
                 guard let viewmodel = mainVM else { return }
@@ -72,10 +75,17 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
             }
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Views.TableViewCells.characterCell) as! CharacterCell
-            guard let name = characters[indexPath.row].name else { return UITableViewCell() }
-            cell.name = name
-            cell.configureCell()
-            
-            return cell;
+        let character = characters[indexPath.row]
+        guard let name = character.name else { return UITableViewCell() }
+        let imageUrl = character.thumbnail?.path ?? ""
+        let mime_extension = character.thumbnail?.thumbnailExtension ?? ""
+        cell.name = name.uppercased()
+        if !imageUrl.isEmpty {
+            cell.imageUrl = (imageUrl, .square_medium, mime_extension)
+        }
+        cell.configureCell()
+        
+        
+        return cell;
     }
 }

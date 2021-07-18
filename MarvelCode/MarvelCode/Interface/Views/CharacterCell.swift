@@ -8,11 +8,18 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var characterName: MarvelLabel!
     
-    public var avatarImage: UIImage?
+    public var avatarImage: UIImageView?
     public var name: String?
     public var viewColor: UIColor? {
         didSet {
             mainView.backgroundColor = viewColor
+        }
+    }
+    public var imageUrl: (url: String, size: ImageSizes, mime: String )? {
+        didSet {
+            if let imageUrl = imageUrl {
+                avatar.load(url: imageUrl.url, size: imageUrl.size, mime: imageUrl.mime)
+            }
         }
     }
     
@@ -27,7 +34,7 @@ class CharacterCell: UITableViewCell {
         }
         
         if let avatarImage = avatarImage {
-            self.avatar.image = avatarImage
+            self.avatar = avatarImage
         }
     }
 

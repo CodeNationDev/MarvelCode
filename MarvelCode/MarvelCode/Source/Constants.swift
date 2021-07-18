@@ -21,5 +21,12 @@ struct Constants {
         struct TableViewCells {
             static let characterCell = "CharacterCell"
         }
+        struct ViewControllers {
+            static let main = "Character List"
+            static let characterDetail = "Character Detail"
+        }
+    }
+    struct StoryBoards {
+        static let characterDetail = "CharacterDetail"
     }
 }

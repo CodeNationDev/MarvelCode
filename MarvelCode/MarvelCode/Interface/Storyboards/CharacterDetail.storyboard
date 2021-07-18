@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="df5-AR-G7S">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Character Detail View-->
+        <scene sceneID="Gky-a8-MBs">
+            <objects>
+                <viewController id="Ggq-Cm-KWd" customClass="CharacterDetailView" customModule="MarvelCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FNS-Tg-3WD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7ze-BH-VG6">
+                                <rect key="frame" x="30" y="128" width="354" height="640"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="the-avengers-svgrepo-com" translatesAutoresizingMaskIntoConstraints="NO" id="fiP-NC-iVe">
+                                        <rect key="frame" x="102" y="0.0" width="150" height="225"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="NxX-K6-jg4"/>
+                                            <constraint firstAttribute="height" constant="225" id="hbf-fQ-1NO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h76-oL-czx">
+                                        <rect key="frame" x="0.0" y="245" width="354" height="395"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J55-wb-816"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7ze-BH-VG6" firstAttribute="leading" secondItem="J55-wb-816" secondAttribute="leading" constant="30" id="0ar-IT-Dai"/>
+                            <constraint firstItem="7ze-BH-VG6" firstAttribute="top" secondItem="J55-wb-816" secondAttribute="top" constant="40" id="E2I-1n-UI3"/>
+                            <constraint firstItem="7ze-BH-VG6" firstAttribute="centerY" secondItem="FNS-Tg-3WD" secondAttribute="centerY" id="R7r-UH-rp0"/>
+                            <constraint firstItem="J55-wb-816" firstAttribute="trailing" secondItem="7ze-BH-VG6" secondAttribute="trailing" constant="30" id="kaS-mM-Ky5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YNR-oG-rbf"/>
+                    <connections>
+                        <outlet property="avatar" destination="fiP-NC-iVe" id="tEc-Ev-E5l"/>
+                        <outlet property="story" destination="h76-oL-czx" id="tdT-36-ErN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aId-Es-PG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="934.78260869565224" y="51.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tPa-sh-kd7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="df5-AR-G7S" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kg8-bZ-c5g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ggq-Cm-KWd" kind="relationship" relationship="rootViewController" id="8Z4-wv-f9u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4E-ZY-bMi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.637681159420293" y="51.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="the-avengers-svgrepo-com" width="460" height="460"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
