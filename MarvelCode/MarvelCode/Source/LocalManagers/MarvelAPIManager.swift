@@ -10,6 +10,8 @@ class MarvelAPIManager {
 
     public func retrieveList(limit: Int? = nil, offset: Int? = nil, completion: @escaping ([Result]) -> Void ) {
         DispatchQueue.main.async {
+//        guard let basePath = Bundle.main.infoDictionary?["BASEPATH"] as? String else { return }
+//        guard let charactersPath = Bundle.main.infoDictionary?["CHARACTERSPATH"] as? String else { return }
         let ts = UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased()
         let params:[String:AnyHashable] = {
             guard let publicKey = Bundle.main.infoDictionary?["PUBLIC_API_KEY"] as? String else { return [:] }
@@ -22,7 +24,7 @@ class MarvelAPIManager {
                 "offset": offset ?? 0]
         }()
         print(params)
-        AF.request(Constants.Paths.base + Constants.Paths.characters, method: .get, parameters: params)
+            AF.request(Constants.Paths.base + Constants.Paths.characters, method: .get, parameters: params)
             .validate(statusCode: 200..<300)
             .responseJSON { (response) in
                 switch response.result {

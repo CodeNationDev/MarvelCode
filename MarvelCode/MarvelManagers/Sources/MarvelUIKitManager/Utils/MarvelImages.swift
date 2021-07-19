@@ -2,6 +2,8 @@
 import Foundation
 import UIKit
 
+/// ImageSizes
+/// String implemented enumeration of all image format options.
 public enum ImageSizes: String {
     case portait_small = "portrait_small" //50x75px
     case portait_medium = "portrait_medium"    //100x150px
@@ -16,6 +18,12 @@ public enum ImageSizes: String {
     case square_fantastic = "standard_fantastic"    //250x250px
     case square_amazing = "standard_amazing"    //180x180px
 }
+/// ImageURL
+/// - Parameters:
+///   - url:String = url path of image.
+///   - size:ImageSize = enumeration of all formats.
+///   - mime: image extension.
+public typealias ImageURL = (url: String, size: ImageSizes, mime: String)
 
 public extension UIImageView {
     func load(url: String?, placeholder: UIImage? = nil, size: ImageSizes, mime: String) {

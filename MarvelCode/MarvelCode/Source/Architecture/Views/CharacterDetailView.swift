@@ -9,9 +9,12 @@ class CharacterDetailView: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(characterData)
+        print(characterData ?? "NO CHARACTERS")
         avatar.load(url: characterData?.thumbnail?.path, size: .portait_extraLarge, mime: (characterData?.thumbnail?.thumbnailExtension)!)
-        story.text = characterData?.resultDescription!
+        if let characterData = characterData, let description = characterData.resultDescription {
+            story.text = description.uppercased()
+        }
+        
         
     }
     

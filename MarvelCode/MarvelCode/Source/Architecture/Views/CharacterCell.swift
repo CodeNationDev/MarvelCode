@@ -3,19 +3,17 @@ import UIKit
 import MarvelUIKitManager
 
 class CharacterCell: UITableViewCell {
-
+    
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var characterName: MarvelLabel!
-    
-    public var avatarImage: UIImageView?
-    public var name: String?
+
     public var viewColor: UIColor? {
         didSet {
             mainView.backgroundColor = viewColor
         }
     }
-    public var imageUrl: (url: String, size: ImageSizes, mime: String )? {
+    public var imageUrl: ImageURL? {
         didSet {
             if let imageUrl = imageUrl {
                 avatar.load(url: imageUrl.url, size: imageUrl.size, mime: imageUrl.mime)
@@ -28,16 +26,14 @@ class CharacterCell: UITableViewCell {
         setupView()
     }
     
-   public func configureCell() {
-        if let name = name {
-            self.characterName.text = name
-        }
-        
-        if let avatarImage = avatarImage {
-            self.avatar = avatarImage
-        }
+    public func configureCell(data: Result) {
+        guard let name = data.name else { return }
+        let imageUrl = data.thumbnail?.path ?? ""
+        let mime_extension = data.thumbnail?.thumbnailExtension ?? ""
+        characterName.text = name.uppercased()
+        avatar.load(url: imageUrl, size: .square_medium, mime: mime_extension)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -46,5 +42,5 @@ class CharacterCell: UITableViewCell {
     func setupView() {
         characterName.size = 20.0
     }
-
+    
 }
