@@ -14,8 +14,6 @@ class CharacterDetailView: BaseViewController {
         if let characterData = characterData, let description = characterData.resultDescription {
             story.text = description.uppercased()
         }
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

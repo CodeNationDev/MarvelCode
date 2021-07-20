@@ -21,9 +21,6 @@ class MainView: BaseViewController  {
         title = Constants.Views.ViewControllers.main.uppercased()
         setupTable()
         mainVM.loadData { [self] (result) in
-            if result {
-                self.characters = mainVM.results
-            }
             tableView.reloadData()
         }
     }
@@ -48,11 +45,11 @@ extension MainView: MainViewProtocol {
 extension MainView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        characters.count
+        mainVM.results.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let characterSelected = characters[indexPath.row]
+        let characterSelected = mainVM.results[indexPath.row]
         Router.routeToCharacterDetail(characterData: characterSelected)
     }
     
@@ -63,11 +60,10 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == characters.count - 20 {
+        if indexPath.row == mainVM.results.count - 20 {
             offset += 100
             DispatchQueue.main.async { [self] in
                 mainVM.loadData(limit: limit, offset: offset) { [self] (result) in
-                    self.characters += mainVM.results
                     tableView.reloadData()
                 }
             }
@@ -76,7 +72,7 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Views.TableViewCells.characterCell) as! CharacterCell
-        cell.configureCell(data: characters[indexPath.row])
+        cell.configureCell(data: mainVM.results[indexPath.row])
         return cell;
     }
 }
