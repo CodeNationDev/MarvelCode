@@ -16,7 +16,7 @@ class CharacterCell: UITableViewCell {
     public var imageUrl: ImageURL? {
         didSet {
             if let imageUrl = imageUrl {
-                avatar.load(url: imageUrl.url, size: imageUrl.size, mime: imageUrl.mime)
+                avatar.load(url: imageUrl.url, size: imageUrl.size, mime: imageUrl.mime, completion: nil)
             }
         }
     }
@@ -31,7 +31,7 @@ class CharacterCell: UITableViewCell {
         let imageUrl = data.thumbnail?.path ?? ""
         let mime_extension = data.thumbnail?.thumbnailExtension ?? ""
         characterName.text = name.uppercased()
-        avatar.load(url: imageUrl, size: .square_medium, mime: mime_extension)
+        avatar.load(url: imageUrl, size: .square_medium, mime: mime_extension, completion: nil)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

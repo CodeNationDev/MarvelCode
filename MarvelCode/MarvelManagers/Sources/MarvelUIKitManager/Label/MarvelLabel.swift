@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 public class MarvelLabel: UILabel {
-    public var size: CGFloat {
+    @IBInspectable public var size: CGFloat {
         get {
             return font.pointSize
         }

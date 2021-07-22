@@ -20,8 +20,10 @@ class MainView: BaseViewController  {
         navigationTitleColor = .spidermanRed
         title = Constants.Views.ViewControllers.main.uppercased()
         setupTable()
+        showSpinner()
         mainVM.loadData { [self] (result) in
             tableView.reloadData()
+            hideSpinner()
         }
     }
     
@@ -61,10 +63,12 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == mainVM.results.count - 20 {
+            showSpinner()
             offset += 100
             DispatchQueue.main.async { [self] in
-                mainVM.loadData(limit: limit, offset: offset) { [self] (result) in
+                mainVM.loadData(limit: limit, offset: offset) { (result) in
                     tableView.reloadData()
+                    hideSpinner()
                 }
             }
         }

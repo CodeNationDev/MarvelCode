@@ -2,6 +2,12 @@
 import Foundation
 import UIKit
 
+public extension UIImage {
+    static var back: UIImage {
+        (UIImage(named: "back", in: Bundle.module, compatibleWith: nil) ?? UIImage()).withRenderingMode(.alwaysTemplate)
+    }
+}
+
 /// ImageSizes
 /// String implemented enumeration of all image format options.
 public enum ImageSizes: String {
@@ -26,7 +32,7 @@ public enum ImageSizes: String {
 public typealias ImageURL = (url: String, size: ImageSizes, mime: String)
 
 public extension UIImageView {
-    func load(url: String?, placeholder: UIImage? = nil, size: ImageSizes, mime: String) {
+    func load(url: String?, placeholder: UIImage? = nil, size: ImageSizes, mime: String, completion: ((Bool)->(Void))?) {
         image = placeholder
         guard let resource = url else { return }
         guard let url = URL(string: "\(resource)/\(size.rawValue).\(mime)") else { return }
@@ -48,6 +54,9 @@ public extension UIImageView {
                     DispatchQueue.main.async {
                         if let image = UIImage(data: data) {
                             self.image = image
+                            if let completion = completion { completion(true) }
+                        } else {
+                            if let completion = completion { completion(false) }
                         }
                     }
                 }
@@ -56,7 +65,7 @@ public extension UIImageView {
     }
     
     func loadReplacing(_ url: String?, size: ImageSizes, mime: String) {
-        load(url: url, placeholder: image, size: size, mime: mime)
+        load(url: url, placeholder: image, size: size, mime: mime, completion: nil)
     }
 }
 

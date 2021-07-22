@@ -1,27 +1,30 @@
 //
 import Foundation
 import UIKit
+import MarvelUIKitManager
 
 class CharacterDetailView: BaseViewController {
     var characterData:Result?
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var story: UITextView!
+    var comics: Comics?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(characterData ?? "NO CHARACTERS")
-        avatar.load(url: characterData?.thumbnail?.path, size: .portait_extraLarge, mime: (characterData?.thumbnail?.thumbnailExtension)!)
-        if let characterData = characterData, let description = characterData.resultDescription {
+        showSpinner()
+        avatar.load(url: characterData?.thumbnail?.path, size: .portait_uncanny, mime: (characterData?.thumbnail?.thumbnailExtension)!, completion: { [self] (result) in
+            hideSpinner()
+        })
+        guard let characterData = characterData else { return }
+        if let description = characterData.resultDescription {
             story.text = description.uppercased()
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if let characterData = characterData, let name = characterData.name {
+        if let name = characterData.name {
             title = name.uppercased()
         }
         navigationColor = .spidermanBlue
         navigationTitleColor = .spidermanRed
     }
 }
+

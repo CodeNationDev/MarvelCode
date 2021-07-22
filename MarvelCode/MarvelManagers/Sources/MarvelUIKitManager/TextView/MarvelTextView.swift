@@ -14,10 +14,18 @@ public class MarvelTextView: UITextView {
         super.init(coder: aDecoder)
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        setupView()
+    }
+    
     private func setupView() {
         textColor = .marvelBlack1
         layer.borderWidth = 4.0
         layer.borderColor = UIColor.marvelBlack1.cgColor
         layer.backgroundColor = UIColor.spidermanGray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 1.0
+        
     }
 }
