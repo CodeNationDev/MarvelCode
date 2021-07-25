@@ -18,16 +18,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edO-eW-K4A">
-                        <rect key="frame" x="0.0" y="35.5" width="569" height="90"/>
+                        <rect key="frame" x="0.0" y="0.0" width="569" height="161"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAf-Hv-3Lh" customClass="MarvelLabel" customModule="MarvelUIKitManager">
-                                <rect key="frame" x="130" y="37.5" width="439" height="15"/>
+                                <rect key="frame" x="130" y="30.5" width="439" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="w0l-gs-l1R"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marvel" translatesAutoresizingMaskIntoConstraints="NO" id="DmC-c4-sbA">
-                                <rect key="frame" x="10" y="0.0" width="90" height="90"/>
+                                <rect key="frame" x="10" y="35.5" width="90" height="90"/>
                                 <color key="backgroundColor" name="marvelYellow1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="GAZ-tN-iL1"/>
@@ -37,8 +40,6 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="90" id="5jD-4N-GqK"/>
-                            <constraint firstItem="uAf-Hv-3Lh" firstAttribute="height" secondItem="DmC-c4-sbA" secondAttribute="height" multiplier="0.169421" id="QXV-uP-qDB"/>
                             <constraint firstItem="DmC-c4-sbA" firstAttribute="leading" secondItem="edO-eW-K4A" secondAttribute="leading" constant="10" id="XFj-00-nq0"/>
                             <constraint firstAttribute="trailing" secondItem="uAf-Hv-3Lh" secondAttribute="trailing" id="ZQG-Dg-V2r"/>
                             <constraint firstItem="DmC-c4-sbA" firstAttribute="centerY" secondItem="edO-eW-K4A" secondAttribute="centerY" id="gvg-yr-c7y"/>
@@ -48,8 +49,11 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="edO-eW-K4A" firstAttribute="leading" secondItem="cHV-w1-IdW" secondAttribute="leading" id="Jxt-fJ-kHK"/>
                     <constraint firstAttribute="trailing" secondItem="edO-eW-K4A" secondAttribute="trailing" id="NRF-yc-dKh"/>
                     <constraint firstItem="edO-eW-K4A" firstAttribute="centerY" secondItem="cHV-w1-IdW" secondAttribute="centerY" id="UrW-3G-YOZ"/>
+                    <constraint firstItem="edO-eW-K4A" firstAttribute="top" secondItem="cHV-w1-IdW" secondAttribute="top" id="XOF-8J-NFQ"/>
+                    <constraint firstAttribute="trailing" secondItem="edO-eW-K4A" secondAttribute="trailing" id="mYw-bK-vGh"/>
                     <constraint firstAttribute="trailing" secondItem="edO-eW-K4A" secondAttribute="trailing" id="mkN-fD-s0j"/>
                     <constraint firstItem="edO-eW-K4A" firstAttribute="leading" secondItem="cHV-w1-IdW" secondAttribute="leading" id="vHx-51-Cqh"/>
                 </constraints>

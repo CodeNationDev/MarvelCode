@@ -15,7 +15,7 @@ class Router: NSObject {
         if let initial = UIStoryboard(name: Constants.StoryBoards.characterDetail, bundle: .main).instantiateInitialViewController() {
             guard let navController = initial as? UINavigationController else { return }
             guard let characterDetailViewController = navController.viewControllers.first as? CharacterDetailView else { return }
-            characterDetailViewController.characterData = characterData
+            characterDetailViewController.heroID = characterData.id
             controller.navigationController?.pushViewController(characterDetailViewController, animated: true)
             
         }

@@ -1,10 +1,14 @@
 //
 import Foundation
 
-
 struct Constants {
     struct AppInfo {
         static let name = "MarvelCode"
+    }
+    struct APIinfo {
+        static let publicKey = Bundle.main.infoDictionary?["PUBLIC_API_KEY"] as? String ?? ""
+        static let privateKey = Bundle.main.infoDictionary?["PRIVATE_API_KEY"] as? String ?? ""
+        static let ts = UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased()
     }
     struct Paths {
         static let base = "https://gateway.marvel.com"
@@ -29,4 +33,5 @@ struct Constants {
     struct StoryBoards {
         static let characterDetail = "CharacterDetail"
     }
+    
 }

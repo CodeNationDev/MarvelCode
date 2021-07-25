@@ -13,9 +13,9 @@ public protocol ReachabilityManagerDelegate {
     func didChangeReachabilityStatus(status: NWPath.Status)
 }
 
+public let sharedReachabilityManager = ReachabilityManagerImp()
+
 public class ReachabilityManagerImp: ReachabilityManager {
-    
-    public static let sharedInstance = ReachabilityManagerImp()
     public var delegate: ReachabilityManagerDelegate?
     let pathMonitor = NWPathMonitor()
     let queue = DispatchQueue(label: "ReachabilityMonitor")

@@ -5,7 +5,7 @@ class MainViewModel {
     var results = [Result]()
     
     func loadData(limit: Int? = nil, offset: Int? = nil, completion: @escaping (Bool) -> Void) {
-        MarvelAPIManager.shared.retrieveList(limit: limit, offset: offset) { results in
+        sharedMarvelAPIManager.retrieveCharacters(params: MarvelAPIParams(limit: limit, offset: offset)) { (results) in
             self.results += results
             completion(true)
         }

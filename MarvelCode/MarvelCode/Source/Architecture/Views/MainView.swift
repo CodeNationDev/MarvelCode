@@ -33,7 +33,7 @@ class MainView: BaseViewController  {
         tableView.dataSource = self
         tableView.register(UINib(nibName: Constants.Views.TableViewCells.characterCell , bundle: .main), forCellReuseIdentifier: Constants.Views.TableViewCells.characterCell)
         tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = 90
+        tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableView.automaticDimension
     }
 }
