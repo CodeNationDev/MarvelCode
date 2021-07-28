@@ -1,7 +1,7 @@
 import XCTest
-@testable import ConnectionManager
+@testable import APIManager
 
-final class ConnectionManager: XCTestCase {
+final class APIManager: XCTestCase {
     func connectionTestExample() {
 //        XCTAssertEqual(ConnectionManager().text, "Hello, World!")
     }

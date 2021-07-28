@@ -39,6 +39,12 @@ In this project, I’ve made a main package named 'MarvelPackage’ composed of 
 ## ReachabilityManager
 Library for manage the Internet reachability. Based on **NWPathMonitor**, has a delegate and a simple protocol for learn in real time the network state.
 
+## APIManager
+Functions for retrieve data from Marvel service.
+
+## Constants
+Struct of static values for use into SPM libraries.
+
 
 ## Helpers
 Library where put all helpers that I use in the project, simple.
@@ -52,9 +58,12 @@ This lib contains all about UIKit objects make custom for the project. UI Compon
 I have included several packages developed by myself that have been very useful. This packages are published at main websites for  manage a public catalog of SPM products (similar to Cocoapods) for some time now. 
 
 Next, I list them with the link to the repositories where you can find both source code and proper documentation at the readme.md’s.
-## [SimplyLogger](https://github.com/CodeNationDev/SimplyLogger.git)
+## [SimplyLogger](https://github.com/CodeNationDev/SimplyLogger.git) 
+Provides a simple and visible way to write logs in Xcode output console.
 ## [SwiftMagicHelpers](https://github.com/CodeNationDev/SwiftMagicHelpers.git)
+Unify generic helpers for use in other projects.
 ## [IntegritySwift](https://github.com/CodeNationDev/IntegritySwift.git)
+A product with many security checks to avoid almost any type of jailbreak and other hacks that compromise the security of our tasks.
 
 I will also put here the links to the sites where they are published (and some others more).
 

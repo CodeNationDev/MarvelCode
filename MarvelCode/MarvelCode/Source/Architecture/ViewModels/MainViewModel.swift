@@ -1,5 +1,6 @@
 //
 import Foundation
+import APIManager
 
 class MainViewModel {
     var results = [Result]()

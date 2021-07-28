@@ -16,26 +16,31 @@ let package = Package(
             type: .dynamic ,
             targets: ["ReachabilityManager"]),
         .library(
-            name: "ConnectionManager",
-            type: .dynamic,
-            targets: ["ConnectionManager"]),
+            name: "APIManager",
+            targets: ["APIManager"]),
         .library(
             name: "Helpers",
             type: .dynamic,
             targets: ["Helpers"]),
         .library(
             name: "MarvelUIKitManager",
-            targets: ["MarvelUIKitManager"])
+            targets: ["MarvelUIKitManager"]),
+        .library(
+            name: "Constants",
+            targets: ["Constants"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/CodeNationDev/SimplyLogger.git", .exact("0.0.7")),
-        .package(name: "SwiftMagicHelpers", url: "https://github.com/CodeNationDev/SwiftMagicHelpers.git", .branch("develop"))
+        .package(url: "https://github.com/CodeNationDev/SimplyLogger.git", .exact("0.0.8")),
+        .package(name: "SwiftMagicHelpers", url: "https://github.com/CodeNationDev/SwiftMagicHelpers.git", .branch("develop")),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .exact("1.4.1"))
     ],
     targets: [
         .target(
             name: "ReachabilityManager"),
         .target(
-            name: "ConnectionManager"),
+            name: "APIManager",
+            dependencies: [.byName(name: "CryptoSwift"),
+                           .byName(name: "Constants")]),
         .target(
             name: "Helpers"),
         .target(
@@ -46,12 +51,13 @@ let package = Package(
             resources: [
                 .process("Resources/Fonts/Marvel-Regular.ttf"),
             ]),
-        
+        .target(
+            name: "Constants"),
         .testTarget(
             name: "ReachabilityManagerTests",
             dependencies: ["ReachabilityManager"]),
         .testTarget(
-            name: "ConnectionManagerTests",
-            dependencies: ["ConnectionManager"])
+            name: "APIManagerTests",
+            dependencies: ["APIManager"])
     ]
 )

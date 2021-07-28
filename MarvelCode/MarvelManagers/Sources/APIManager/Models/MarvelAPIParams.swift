@@ -1,22 +1,22 @@
-// MARK: - ApiParams
-import APIManager
+import Constants
 
-struct MarvelAPIParams {
-    var ts: String?
-    var apikey: String?
-    var hash: String?
-    var limit: Int?
-    var offset: Int?
+// MARK: - ApiParams
+
+public struct MarvelAPIParams {
+    public var ts: String?
+    public var apikey: String?
+    public var hash: String?
+    public var limit: Int?
+    public var offset: Int?
     
     public init(limit: Int? = nil, offset: Int? = nil) {
         self.ts = Constants.APIinfo.ts
         self.apikey = Constants.APIinfo.publicKey
-        self.hash = ""
-//        self.hash = (Constants.APIinfo.ts + Constants.APIinfo.privateKey + Constants.APIinfo.publicKey).md5()
+        self.hash = (Constants.APIinfo.ts + Constants.APIinfo.privateKey + Constants.APIinfo.publicKey).md5()
         self.limit = limit ?? 100
         self.offset = offset ?? 0
     }
-    func asDictionary() -> [String: Any] {
+    public func asDictionary() -> [String: Any] {
         var dict:[String: Any] = [:]
         dict["ts"] = self.ts
         dict["apikey"] = self.apikey
@@ -27,3 +27,4 @@ struct MarvelAPIParams {
         return dict
     }
 }
+

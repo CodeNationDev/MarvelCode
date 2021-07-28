@@ -4,17 +4,24 @@ import CryptoSwift
 import SimplyLogger
 import Alamofire
 import SwiftMagicHelpers
+import Constants
+import ReachabilityManager
 
-let sharedMarvelAPIManager = MarvelAPIManager()
+public let sharedMarvelAPIManager = MarvelAPIManager()
 
-class MarvelAPIManager {
+public class MarvelAPIManager {
     
     public func retrieveCharacters(params: MarvelAPIParams , heroID: Int? = nil, completion: @escaping ([Result]) -> Void) {
         DispatchQueue.main.async { [self] in
-            request(params: params, path: Constants.Paths.characters + "\(heroID == nil ? "":"/\(String(heroID!))" )") { (success, results) in
-                if success {
-                    completion(results)
+            if sharedReachabilityManager.isReachable() {
+                SimplyLogger.log(str: Constants.Messages.Info.reachabilitySuccess, identity: "reachability", category: .success)
+                request(params: params, path: Constants.Paths.characters + "\(heroID == nil ? "":"/\(String(heroID!))" )") { (success, results) in
+                    if success {
+                        completion(results)
+                    }
                 }
+            } else {
+                SimplyLogger.log(str: Constants.Messages.Errors.reachabilityFail, identity: "reachability", category: .error)
             }
         }
     }
@@ -30,15 +37,16 @@ class MarvelAPIManager {
                             print(json)
                             let decoded = try SwiftMagicHelpers.HelperManager.JSON.jsonDecode(json, type: MarvelResponse.self)
                             if let data = decoded.data, let results = data.results {
+                                SimplyLogger.log(str: Constants.Messages.Info.requestSuccess, category: .success)
                                 completion(true,results)
                             }
                             
                         } catch let error {
-                            print(error)
+                            SimplyLogger.log(str: "\(Constants.Messages.Errors.errorParser), reason: \(error.localizedDescription)", category: .error)
                         }
                     }
                 case let .failure(error):
-                    print("Request Error: \(error.localizedDescription)")
+                    SimplyLogger.log(str: "\(Constants.Messages.Errors.errorRequest), reason: \(error.localizedDescription)", category: .error)
                 }
             }
         

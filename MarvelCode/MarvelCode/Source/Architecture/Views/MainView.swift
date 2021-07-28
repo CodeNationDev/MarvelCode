@@ -2,6 +2,8 @@
 import Foundation
 import UIKit
 import MarvelUIKitManager
+import APIManager
+import Constants
 
 protocol MainViewProtocol: class {
     func updateCharactersData(results: [Result])
@@ -16,8 +18,6 @@ class MainView: BaseViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationColor = .spidermanBlue
-        navigationTitleColor = .spidermanRed
         title = Constants.Views.ViewControllers.main.uppercased()
         setupTable()
         showSpinner()
@@ -27,6 +27,10 @@ class MainView: BaseViewController  {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        styler()
+    }
     
     func setupTable() {
         tableView.delegate = self
@@ -35,6 +39,13 @@ class MainView: BaseViewController  {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 140
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.backgroundColor = .backColor
+    }
+    
+    func styler() {
+        navigationColor = .backColor
+        navigationTitleColor = .cellTextColor
+        view.backgroundColor = .backColor
     }
 }
 
@@ -53,12 +64,6 @@ extension MainView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let characterSelected = mainVM.results[indexPath.row]
         Router.routeToCharacterDetail(characterData: characterSelected)
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? CharacterCell {
-            cell.viewColor = .spidermanWhite
-        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

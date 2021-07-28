@@ -9,7 +9,7 @@ extension UIFont {
        let fontName: String = "Marvel-Regular"
         registerFont(withFilenameString: "\(fontName).ttf", bundle: Bundle.module)
         if let font = UIFont(name: fontName, size: size) {
-            SimplyLogger.log(str: "Successfull creating font \(font.fontName)", category: .info)
+            SimplyLogger.log(str: "Successfull creating font \(font.fontName)", category: .success)
             return font
         } else {
             SimplyLogger.log(str: "Error creating font", category: .error)

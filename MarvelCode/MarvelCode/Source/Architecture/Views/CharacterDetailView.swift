@@ -3,6 +3,7 @@ import Foundation
 import UIKit
 import MarvelUIKitManager
 import Helpers
+import APIManager
 
 class CharacterDetailView: BaseViewController {
     let viewmodel = CharacterDetailViewModel()
@@ -24,9 +25,6 @@ class CharacterDetailView: BaseViewController {
                     var comics:[String] = []
                     characterData.comics?.items?.forEach { comics.append($0.name?.uppercased() ?? "") }
                     story.text = String(format: "character.detail.story".localized, characterData.resultDescription?.uppercased() ?? "", "\(characterData.comics?.available ?? 0)", comics.joined(separator: ", "))
-//                    if let description = characterData.resultDescription, !description.isEmpty {
-//                        story.text = description.uppercased()
-//                    } else {story.text = "NO DESCRIPTION AVAILABLE" }
                     if let name = characterData.name {
                         title = name.uppercased()
                     }
@@ -43,9 +41,11 @@ class CharacterDetailView: BaseViewController {
     }
     
     fileprivate func styler() {
-        navigationColor = .spidermanBlue
-        navigationTitleColor = .spidermanRed
-        view.backgroundColor = .spidermanBlue
+        navigationColor = .backColor
+        navigationTitleColor = .cellTextColor
+        view.backgroundColor = .backColor
+        avatar.layer.borderWidth = 2.5
+        avatar.layer.borderColor = UIColor.spidermanBlack.cgColor
     }
 }
 

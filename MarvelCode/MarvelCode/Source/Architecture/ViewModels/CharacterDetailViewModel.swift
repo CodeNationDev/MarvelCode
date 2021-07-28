@@ -1,5 +1,7 @@
 
 import Foundation
+import APIManager
+
 
 class CharacterDetailViewModel {
     var results = [Result]()

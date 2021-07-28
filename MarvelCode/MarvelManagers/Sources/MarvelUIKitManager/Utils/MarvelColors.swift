@@ -30,5 +30,9 @@ extension UIColor {
     public static var spidermanGray = UIColor(named: "spidermanGray", in: Bundle.module, compatibleWith: nil)!
     public static var spidermanRed = UIColor(named: "spidermanRed", in: Bundle.module, compatibleWith: nil)!
     public static var spidermanWhite = UIColor(named: "spidermanWhite", in: Bundle.module, compatibleWith: nil)!
+    
+    public static var cellTextColor = UIColor(named: "cellTextColor", in: Bundle.module, compatibleWith: nil)!
+    public static var backColor  = UIColor(named: "backColor", in: Bundle.module, compatibleWith: nil)!
+    
 }
 
