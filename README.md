@@ -90,6 +90,13 @@ For this code test, I only include unit testing for APIManager, both from app an
 
 I only follow the unit testing method, not test driven using TDD (not possible BDD because I havn't had client side), but in a future project we can work with both testing methodologies.
 
+<br>
+
+# APIKey best practices
+For this code test, I hardcoded the apikey into Constants struct into SPM package, but in a real project, the APIKey never must be stored unless we use the keychain under SecureEnclave chip. I usually store the apikey in my server, get it with an API Rest service and I store it directly in the keychain . In spite of use the keychain, it could be vulberable to a jailbreak, this is why I integrated my product Integrity Swift, the app will never store the apikey if the iPhone is jailbreaked, and if jailbreak is installed after, the app will never works.
+
+For personal API keys, the best practice is use a BuildConfig with a xccofig file and ignore it in git. By this way each one use own  apikey and nobody shares them with others.
+
 ## Meta
 
 David Martin Saiz - [LinkedIN](https://www.linkedin.com/in/david-martin-saiz/) - [eMail](davms81@gmail.com)
