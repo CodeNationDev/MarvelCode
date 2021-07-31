@@ -41,16 +41,17 @@ Library for manage the Internet reachability. Based on **NWPathMonitor**, has a 
 
 ## APIManager
 Functions for retrieve data from Marvel service.
+> **IMPORTANT**
+> This package contains the **Models** of this app, coforming the MVVM, but outsourced this time because for this short app, all models belong to the **APIManager**.
 
 ## Constants
 Struct of static values for use into SPM libraries.
-
 
 ## Helpers
 Library where put all helpers that I use in the project, simple.
 
 ## MarvelUIKitManager
-This lib contains all about UIKit objects make custom for the project. UI Components, fonts, resources and utils.
+This lib contains all about UIKit objects make custom for the project. UI Components, fonts, resources and utils. DarkMode availabe for a little sample of colors.
 
 </br>
 
@@ -75,6 +76,19 @@ I will also put here the links to the sites where they are published (and some o
 - Alamofire
 - CryptoSwift
 
+<br>
+
+# My Style
+>- Single comment at top of code files.
+>- No code comments, the important info about interface and objects, will be placed in a readme.md. The code must be clean and auto-explained.
+>- Perfectly indented.
+>- Perfectly linted. After some time ago using linters, they modified my code style and all parts complies with almost all main rules about code linting.
+
+# Unit Testing
+
+For this code test, I only include unit testing for APIManager, both from app and package. In a future app, we can cover much more source tested.
+
+I only follow the unit testing method, not test driven using TDD (not possible BDD because I havn't had client side), but in a future project we can work with both testing methodologies.
 
 ## Meta
 

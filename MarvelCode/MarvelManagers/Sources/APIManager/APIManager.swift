@@ -10,7 +10,6 @@ import ReachabilityManager
 public let sharedMarvelAPIManager = MarvelAPIManager()
 
 public class MarvelAPIManager {
-    
     public func retrieveCharacters(params: MarvelAPIParams , heroID: Int? = nil, completion: @escaping ([Result]) -> Void) {
         DispatchQueue.main.async { [self] in
             if sharedReachabilityManager.isReachable() {
@@ -18,6 +17,8 @@ public class MarvelAPIManager {
                 request(params: params, path: Constants.Paths.characters + "\(heroID == nil ? "":"/\(String(heroID!))" )") { (success, results) in
                     if success {
                         completion(results)
+                    } else {
+                        completion([])
                     }
                 }
             } else {
@@ -39,17 +40,20 @@ public class MarvelAPIManager {
                             if let data = decoded.data, let results = data.results {
                                 SimplyLogger.log(str: Constants.Messages.Info.requestSuccess, category: .success)
                                 completion(true,results)
+                            } else {
+                                completion(false,[])
                             }
                             
                         } catch let error {
                             SimplyLogger.log(str: "\(Constants.Messages.Errors.errorParser), reason: \(error.localizedDescription)", category: .error)
+                            completion(false,[])
                         }
                     }
                 case let .failure(error):
                     SimplyLogger.log(str: "\(Constants.Messages.Errors.errorRequest), reason: \(error.localizedDescription)", category: .error)
+                    completion(false,[])
                 }
             }
-        
     }
 }
 

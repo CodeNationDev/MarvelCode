@@ -21,7 +21,7 @@ class CharacterDetailView: BaseViewController {
         showSpinner()
         viewmodel.loadData(heroID: heroID) { [self] (ready) in
             if ready {
-                if let characterData = viewmodel.results.first {
+                if let characterData = viewmodel.hero {
                     var comics:[String] = []
                     characterData.comics?.items?.forEach { comics.append($0.name?.uppercased() ?? "") }
                     story.text = String(format: "character.detail.story".localized, characterData.resultDescription?.uppercased() ?? "", "\(characterData.comics?.available ?? 0)", comics.joined(separator: ", "))

@@ -1,10 +1,10 @@
 //
-import UIKit
+import Foundation
 
 public struct Constants {
     public struct APIinfo {
-        public static let publicKey = Bundle.main.infoDictionary?["PUBLIC_API_KEY"] as? String ?? ""
-        public static let privateKey = Bundle.main.infoDictionary?["PRIVATE_API_KEY"] as? String ?? ""
+        public static let publicKey = "09fca74c52fe76c064aee0119df51842"
+        public static let privateKey = "c4f3d214a9c2592776b898f64ab41eb52fa9276e"
         public static let ts = UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased()
     }
     public struct Paths {

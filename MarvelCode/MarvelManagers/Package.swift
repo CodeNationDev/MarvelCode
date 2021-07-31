@@ -32,7 +32,11 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/CodeNationDev/SimplyLogger.git", .exact("0.0.8")),
         .package(name: "SwiftMagicHelpers", url: "https://github.com/CodeNationDev/SwiftMagicHelpers.git", .branch("develop")),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .exact("1.4.1"))
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .exact("1.4.1")),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .exact("5.4.3")),
+        .package(name: "Firebase",
+                       url: "https://github.com/firebase/firebase-ios-sdk.git",
+                       .branch("7.0-spm-beta")),
     ],
     targets: [
         .target(
@@ -40,7 +44,8 @@ let package = Package(
         .target(
             name: "APIManager",
             dependencies: [.byName(name: "CryptoSwift"),
-                           .byName(name: "Constants")]),
+                           .byName(name: "Constants"),
+                           .byName(name: "SimplyLogger")]),
         .target(
             name: "Helpers"),
         .target(
@@ -54,10 +59,7 @@ let package = Package(
         .target(
             name: "Constants"),
         .testTarget(
-            name: "ReachabilityManagerTests",
-            dependencies: ["ReachabilityManager"]),
-        .testTarget(
             name: "APIManagerTests",
-            dependencies: ["APIManager"])
+            dependencies: ["APIManager", "SimplyLogger", "Alamofire", "SwiftMagicHelpers", "ReachabilityManager"])
     ]
 )

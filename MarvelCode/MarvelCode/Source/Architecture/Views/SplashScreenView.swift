@@ -1,5 +1,6 @@
 //
 import UIKit
+import APIManager
 
 class SplashScreenView: UIViewController {
     override func viewDidLoad() {

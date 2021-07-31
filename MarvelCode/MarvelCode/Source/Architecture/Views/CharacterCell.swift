@@ -43,7 +43,6 @@ class CharacterCell: UITableViewCell {
         layer.shadowRadius = 4
         layer.shadowOffset = CGSize(width: 0, height: 7)
         layer.shadowColor = UIColor.black.cgColor
-//        contentView.layer.cornerRadius = 8
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
     }
     
