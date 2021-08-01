@@ -1,10 +1,4 @@
 //
-//  MarvelCodeTests.swift
-//  MarvelCodeTests
-//
-//  Created by david.martin.saiz on 02/07/2021.
-//
-
 import XCTest
 @testable import MarvelCode
 

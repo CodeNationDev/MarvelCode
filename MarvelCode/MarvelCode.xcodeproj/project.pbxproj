@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		070B639F26AB1747009B59F7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 070B639E26AB1747009B59F7 /* Localizable.strings */; };
 		072FB3AA2691F94B00886508 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072FB3A92691F94B00886508 /* SplashScreen.storyboard */; };
-		072FB3CA2693A95400886508 /* SpashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB3C92693A95400886508 /* SpashScreenViewModel.swift */; };
 		072FB3D52693AC3E00886508 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB3D42693AC3E00886508 /* MainView.swift */; };
 		072FB3DB2693AC4B00886508 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072FB3DA2693AC4B00886508 /* MainViewModel.swift */; };
 		072FB3EC2693B4DB00886508 /* ReachabilityManager in Frameworks */ = {isa = PBXBuildFile; productRef = 072FB3EB2693B4DB00886508 /* ReachabilityManager */; };
@@ -78,7 +77,6 @@
 /* Begin PBXFileReference section */
 		070B639E26AB1747009B59F7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		072FB3A92691F94B00886508 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
-		072FB3C92693A95400886508 /* SpashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpashScreenViewModel.swift; sourceTree = "<group>"; };
 		072FB3D42693AC3E00886508 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		072FB3DA2693AC4B00886508 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		072FB3F02694F7BE00886508 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			children = (
 				072FB3DA2693AC4B00886508 /* MainViewModel.swift */,
 				072FB3F62694FFDD00886508 /* CharacterDetailViewModel.swift */,
-				072FB3C92693A95400886508 /* SpashScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -402,7 +399,6 @@
 				072FB3F12694F7BE00886508 /* Router.swift in Sources */,
 				072FB3FA2694FFDD00886508 /* CharacterDetailView.swift in Sources */,
 				072FB3FF2695074D00886508 /* ReplaceSegue.swift in Sources */,
-				072FB3CA2693A95400886508 /* SpashScreenViewModel.swift in Sources */,
 				079BE9F4268F5D4100A8FD4D /* SplashScreenView.swift in Sources */,
 				072FB3D52693AC3E00886508 /* MainView.swift in Sources */,
 				0789E8C526B0AE6000550419 /* LocalConstants.swift in Sources */,

@@ -16,7 +16,7 @@ final class APIManager: XCTestCase {
         }
     }
     
-    func testRequestWithLimit() {
+    func testRequestWithLimit10() {
         var results:[Result]?
         let expectations = expectation(description: "Request With Limit 10")
         sharedMarvelAPIManager.retrieveCharacters(params: MarvelAPIParams(limit: 10)) { (items) in
@@ -49,12 +49,12 @@ final class APIManager: XCTestCase {
     }
     
     func testRequestValidHeroID() {
-        let expectations = expectation(description: "Request With Limit 10")
+        let expectations = expectation(description: "Request Valid HeroID")
         var results:[Result] = []
         
         sharedMarvelAPIManager.retrieveCharacters(params: MarvelAPIParams(), heroID: 1011334) { (items) in
-            expectations.fulfill()
             results = items
+            expectations.fulfill()
         }
         
         waitForExpectations(timeout: 10) { (error) in
@@ -65,12 +65,12 @@ final class APIManager: XCTestCase {
     }
     
     func testRequestInvalidHeroID() {
-        let expectations = expectation(description: "Request With Limit 10")
+        let expectations = expectation(description: "Request Invalid HeroID")
         var results:[Result] = []
         
         sharedMarvelAPIManager.retrieveCharacters(params: MarvelAPIParams(), heroID: 1234567) { (items) in
-            expectations.fulfill()
             results = items
+            expectations.fulfill()
         }
         
         waitForExpectations(timeout: 10) { (error) in

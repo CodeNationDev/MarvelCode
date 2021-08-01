@@ -34,9 +34,6 @@ let package = Package(
         .package(name: "SwiftMagicHelpers", url: "https://github.com/CodeNationDev/SwiftMagicHelpers.git", .branch("develop")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .exact("1.4.1")),
         .package(url: "https://github.com/Alamofire/Alamofire.git", .exact("5.4.3")),
-        .package(name: "Firebase",
-                       url: "https://github.com/firebase/firebase-ios-sdk.git",
-                       .branch("7.0-spm-beta")),
     ],
     targets: [
         .target(
@@ -60,6 +57,9 @@ let package = Package(
             name: "Constants"),
         .testTarget(
             name: "APIManagerTests",
-            dependencies: ["APIManager", "SimplyLogger", "Alamofire", "SwiftMagicHelpers", "ReachabilityManager"])
+            dependencies: ["APIManager", "SimplyLogger", "Alamofire", "SwiftMagicHelpers", "ReachabilityManager"]),
+        .testTarget(
+            name: "MarvelUIKitManagerTests",
+            dependencies: ["MarvelUIKitManager"])
     ]
 )
