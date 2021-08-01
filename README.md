@@ -86,7 +86,7 @@ I will also put here the links to the sites where they are published (and some o
 
 # Unit Testing
 
-For this code test, I only include unit testing for APIManager, both from app and package. In a future app, we can cover much more source tested.
+For this code test, I only include unit testing for APIManager, both from app and package. In a future app and Image extension, we can cover much more source tested.
 
 I only follow the unit testing method, not test driven using TDD (not possible BDD because I havn't had client side), but in a future project we can work with both testing methodologies.
 
