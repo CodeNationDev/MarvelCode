@@ -2,6 +2,7 @@
 import Foundation
 import UIKit
 
+/// UIColor extension with computed properties that returns the custom color from xcasset catalog.
 
 extension UIColor {
     // MARK: Colors

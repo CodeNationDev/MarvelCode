@@ -5,6 +5,9 @@ import SimplyLogger
 
 extension UIFont {
     
+    /// Function for create and register the custom font.
+    /// - Parameter size: size of font
+    /// - Returns: UIFont object.
     public class func marvelRegular(size: CGFloat) -> UIFont {
        let fontName: String = "Marvel-Regular"
         registerFont(withFilenameString: "\(fontName).ttf", bundle: Bundle.module)
@@ -19,7 +22,11 @@ extension UIFont {
 }
 
 internal extension UIFont {
-
+    
+    /// Function for reguster fonts programmatically.
+    /// - Parameters:
+    ///   - filenameString: the PostScript name of custom font.
+    ///   - bundle: the bundle context where font is.
     static func registerFont(withFilenameString filenameString: String, bundle: Bundle) {
         
         guard let pathForResourceString = bundle.path(forResource: filenameString, ofType: nil) else {

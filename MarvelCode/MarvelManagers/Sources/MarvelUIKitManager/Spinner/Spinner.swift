@@ -4,7 +4,8 @@ import UIKit
 
 public class SpinnerViewController: UIViewController {
     var spinner = UIActivityIndicatorView(style: .whiteLarge)
-
+    
+    /// Overrides loadView function for create the spinner.
     public override func loadView() {
         view = UIView()
         view.backgroundColor = UIColor(white: 0, alpha: 0.7)

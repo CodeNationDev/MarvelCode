@@ -9,7 +9,14 @@ import ReachabilityManager
 
 public let sharedMarvelAPIManager = MarvelAPIManager()
 
+/// API manager class for manage service requests.
 public class MarvelAPIManager {
+    
+    /// Main function for API service requests.
+    /// - Parameters:
+    ///   - params: MarvelParams object with customize the results an provide authorization for request.
+    ///   - heroID: integer character ID. If this param is nil, the function gets the complete list of characters.
+    ///   - completion: request response decoded with main model (array of Result model).
     public func retrieveCharacters(params: MarvelAPIParams , heroID: Int? = nil, completion: @escaping ([Result]) -> Void) {
         DispatchQueue.main.async { [self] in
             if sharedReachabilityManager.isReachable() {
@@ -27,6 +34,11 @@ public class MarvelAPIManager {
         }
     }
     
+    /// Core function request.
+    /// - Parameters:
+    ///   - params: MarvelParams object with customize the results an provide authorization for request.
+    ///   - heroID: integer character ID. If this param is nil, the function gets the complete list of characters.
+    ///   - completion: request response decoded with main model (array of Result model).
     fileprivate func request(params: MarvelAPIParams, path: String, completion: @escaping (Bool,[Result]) -> Void) {
         AF.request(Constants.Paths.base + path, method: .get, parameters: params.asDictionary())
             .validate(statusCode: 200..<300)

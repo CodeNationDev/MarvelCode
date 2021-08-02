@@ -32,6 +32,8 @@ class MainView: BaseViewController  {
         styler()
     }
     
+    
+    /// UITableView setup and style.
     func setupTable() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,6 +44,8 @@ class MainView: BaseViewController  {
         tableView.backgroundColor = .backColor
     }
     
+    
+    /// Setup style of view.
     func styler() {
         navigationColor = .backColor
         navigationTitleColor = .cellTextColor

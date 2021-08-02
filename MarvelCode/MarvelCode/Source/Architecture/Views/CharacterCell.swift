@@ -27,6 +27,9 @@ class CharacterCell: UITableViewCell {
         setupView()
     }
     
+    
+    /// Cell view config when data is ready.
+    /// - Parameter data: data for configure cell.
     public func configureCell(data: Result) {
         guard let name = data.name else { return }
         let imageUrl = data.thumbnail?.path ?? ""
@@ -46,6 +49,8 @@ class CharacterCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
     }
     
+    
+    /// View styler.
     func setupView() {
         characterName.size = 20.0
         mainView.backgroundColor = .backColor

@@ -4,6 +4,9 @@ import UIKit
 
 extension UIApplication {
     
+    /// Function for catch the top view controller in Viewcycle stack.
+    /// - Parameter base: first member of stack requested for get top ViewController.
+    /// - Returns: top UIViewController object finded. Could be UINavigationController, UITabBarController or a simple ViewController.
     public static func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return getTopViewController(base: nav.visibleViewController)

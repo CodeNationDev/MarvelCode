@@ -28,6 +28,8 @@ class BaseViewController: UIViewController {
         setupView()
     }
     
+    
+    /// Function for setup navigation controller back button
     func setupView() {
         if let navcontroller = navigationController, let firstVC = navcontroller.viewControllers.first {
             if self != firstVC {
@@ -39,11 +41,14 @@ class BaseViewController: UIViewController {
         }
     }
     
+    
+    /// Action of back button.
     @objc func leftTouchUpInside() {
         navigationController?.popViewController(animated: true)
     }
     
     
+    /// Function for show spinner at loading time.
     func showSpinner() {
         addChild(child)
         child.view.frame = view.frame
@@ -51,6 +56,7 @@ class BaseViewController: UIViewController {
         child.didMove(toParent: self)
     }
     
+    /// Function for hide spinner when task finished.
     func hideSpinner() {
         DispatchQueue.main.async { [self] in
             child.willMove(toParent: nil)

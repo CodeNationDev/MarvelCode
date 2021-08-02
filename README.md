@@ -80,7 +80,7 @@ I will also put here the links to the sites where they are published (and some o
 
 # My Style
 >- Single comment at top of code files.
->- No code comments, the important info about interface and objects, will be placed in a readme.md. The code must be clean and auto-explained.
+>- Source code comments valid for generate auto-doc with frameworks like Jekyll or Jazzy.
 >- Perfectly indented.
 >- Perfectly linted. After some time ago using linters, they modified my code style and all parts complies with almost all main rules about code linting.
 
