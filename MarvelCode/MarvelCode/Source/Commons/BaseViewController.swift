@@ -1,6 +1,7 @@
 //
 import UIKit
 import MarvelUIKitManager
+import SwiftMagicHelpers
 
 class BaseViewController: UIViewController {
     let child = SpinnerViewController()
@@ -63,5 +64,20 @@ class BaseViewController: UIViewController {
             child.view.removeFromSuperview()
             child.removeFromParent()
         }
+    }
+    
+    func showExitAlert(title: String ,message: String, actionTitle: String? = "OK") {
+        
+        let alertAction =  UIAlertAction(title: actionTitle, style: .default) { _ in
+            UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+            //Minimize and kill app.
+            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
+                exit(0)
+            }
+        }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -19,11 +19,20 @@ class MainView: BaseViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constants.Views.ViewControllers.main.uppercased()
-        setupTable()
-        showSpinner()
-        mainVM.loadData { [self] (result) in
-            tableView.reloadData()
-            hideSpinner()
+        if !Constants.APIinfo.privateKey.isEmpty || !Constants.APIinfo.publicKey.isEmpty {
+            setupTable()
+            showSpinner()
+            mainVM.loadData { [self] (result) in
+                if result {
+                    tableView.reloadData()
+                    hideSpinner()
+                } else {
+                    showExitAlert(title: Constants.Messages.Warning.adviceGenericTitle  , message: Constants.Messages.Errors.errorRetrievingResults, actionTitle: Constants.Messages.Actions.ok)
+                }
+            }
+        } else {
+            tableView.isHidden = true
+            showExitAlert(title: Constants.Messages.Warning.adviceGenericTitle  , message: Constants.Messages.Errors.errorEnvironmentVariablesKey, actionTitle: Constants.Messages.Actions.ok)
         }
     }
     

@@ -15,8 +15,10 @@ class MainViewModel {
     ///   - completion: result of data back.
     func loadData(limit: Int? = nil, offset: Int? = nil, completion: @escaping (Bool) -> Void) {
         sharedMarvelAPIManager.retrieveCharacters(params: MarvelAPIParams(limit: limit, offset: offset)) { (results) in
-            self.results += results
-            completion(true)
+            if !results.isEmpty {
+                self.results += results
+                completion(true)
+            } else  { completion(false) }
         }
     }
 }

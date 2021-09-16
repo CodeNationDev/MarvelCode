@@ -92,10 +92,23 @@ I only follow the unit testing method, not test driven using TDD (not possible B
 
 <br>
 
-# APIKey best practices
-For this code test, I hardcoded the apikey into Constants struct into SPM package, but in a real project, the APIKey never must be stored unless we use the keychain under SecureEnclave chip. I usually store the apikey in my server, get it with an API Rest service and I store it directly in the keychain . In spite of use the keychain, it could be vulberable to a jailbreak, this is why I integrated my product Integrity Swift, the app will never store the apikey if the iPhone is jailbreaked, and if jailbreak is installed after, the app will never works.
+# How to run
+## Almost Out of The Box
+Follow this simple steps for launch project:
+> - Clone the project.
+> - Wait until fetch SPM dependencies.
+> - Put your api keys in the environment variables created at Scheme arguments.
+>   - Go to schemes, MarvelCode, and clic on edit shceme.
+>   - Then, edit the environment variables into Run option -> Arguments -> Environment Variables.
+> - Run the project with MarvelCode app target.
+> Check following screenshots:
+> <br><br><br>
+><img src="tuto1.png"> <img src="tuto2.png"> 
+> <br><br><br>
 
-For personal API keys, the best practice is use a BuildConfig with a xccofig file and ignore it in git. By this way each one use own  apikey and nobody shares them with others.
+
+# APIKey best practices
+No api key should be stored in a repository, end less more at a public repository.
 
 ## Meta
 
